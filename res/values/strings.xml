@@ -3,5 +3,6 @@
 
     <string name="app_name">SmartLifeC</string>
     <string name="action_settings">设置</string>
+    <string name="action_choice_source">信号源</string>
 
 </resources>
