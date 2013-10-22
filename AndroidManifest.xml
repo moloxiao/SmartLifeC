@@ -15,15 +15,28 @@
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
             android:name="com.smartlife.smartlifec.SplashActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name="com.smartlife.smartlifec.PoolControlImplActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name="com.smartlife.smartlifec.setting.SettingMenuActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name="com.smartlife.smartlifec.setting.SettingDeviceTypeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

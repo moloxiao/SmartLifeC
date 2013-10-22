@@ -10,14 +10,16 @@
             android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
     		android:layout_marginLeft="20dp"
-    		android:text="开机" />
+    		android:text="开机"
+    		android:onClick="btnPowerClick" />
         
         <Button 
             android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
     		android:layout_alignParentRight="true"
     		android:layout_marginRight="20dp"
-    		android:text="静音" />
+    		android:text="静音"
+    		android:onClick="btnMuteClick" />
     </RelativeLayout>
     
     <LinearLayout android:id="@+id/second_rect"
@@ -35,27 +37,32 @@
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="1" />
+    			android:text="1"
+    			android:onClick="btn1Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="2" />
+    			android:text="2"
+    			android:onClick="btn2Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="3" />
+    			android:text="3"
+    			android:onClick="btn3Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="4" />
+    			android:text="4"
+    			android:onClick="btn4Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="5" />
+    			android:text="5"
+    			android:onClick="btn5Click" />
         </LinearLayout>
         
         <LinearLayout 
@@ -67,27 +74,32 @@
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="6" />
+    			android:text="6"
+    			android:onClick="btn6Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="7" />
+    			android:text="7"
+    			android:onClick="btn7Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="8" />
+    			android:text="8"
+    			android:onClick="btn8Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="9" />
+    			android:text="9"
+    			android:onClick="btn9Click" />
     		<Button 
             	android:layout_width="50dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="0" />
+    			android:text="0"
+    			android:onClick="btn0Click" />
         </LinearLayout>
     </LinearLayout>
     
@@ -105,7 +117,8 @@
             	android:layout_width="100dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="音量+" />
+    			android:text="音量+"
+    			android:onClick="btnUpClick" />
         </LinearLayout>
         <LinearLayout 
         	android:layout_width="match_parent"
@@ -116,17 +129,20 @@
             	android:layout_width="100dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="频道-" />
+    			android:text="频道-"
+    			android:onClick="btnLeftClick" />
     		<Button 
             	android:layout_width="100dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="确定" />
+    			android:text="确定"
+    			android:onClick="btnOkClick" />
     		<Button 
             	android:layout_width="100dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="频道+" />
+    			android:text="频道+"
+    			android:onClick="btnRightClick" />
         </LinearLayout>
         <LinearLayout 
         	android:layout_width="match_parent"
@@ -137,7 +153,8 @@
             	android:layout_width="100dp"
     			android:layout_height="wrap_content"
     			android:layout_margin="5dp"
-    			android:text="音量-" />
+    			android:text="音量-"
+    			android:onClick="btnDownClick" />
         </LinearLayout>
     </LinearLayout>
 
