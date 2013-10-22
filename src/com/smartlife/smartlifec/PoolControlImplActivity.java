@@ -6,6 +6,8 @@ import com.smartlife.smartlifec.connect.ControlManager;
 import com.smartlife.smartlifec.connect.ControlOrderType;
 import com.smartlife.smartlifec.domain.DeviceType;
 import com.smartlife.smartlifec.setting.SettingDeviceTypeActivity;
+import com.smartlife.smartlifec.setting.SettingMenuActivity;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 
 	private TextView deviceName;
 	private TextView sourceName;
+	private TextView screenName;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 	private void initView() {
 		deviceName = (TextView)findViewById(R.id.control_device_name);
 		sourceName = (TextView)findViewById(R.id.control_source_id);
+		screenName = (TextView)findViewById(R.id.control_screen_id);
 	}
 	
 	@Override
@@ -35,8 +39,10 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 		int deviceId = SettingDeviceTypeActivity.getCurrentStoredDeviceId(this);
 		deviceName.setText( DeviceType.getDesc(deviceId));
 		int sourceId = BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId) + 1;
-		sourceName.setText("屏幕:" + sourceId);
+		sourceName.setText("节目源:" + sourceId);
 		changeSourceId(sourceId);
+		int screenId = SettingMenuActivity.getCurrentStoredScreenId(PoolControlImplActivity.this, deviceId) + 1;
+		screenName.setText("线路:" + screenId);
 	}
 	
 	private void  changeSourceId(int sourceId) {
@@ -66,7 +72,7 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 			public void onClick(DialogInterface dialog, int which) {
 				BaseControlActivity.storeCurrentSourceId(PoolControlImplActivity.this, which, deviceId);
 				int sourceId = BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId) + 1;
-				sourceName.setText("屏幕:" + sourceId);
+				sourceName.setText("节目源:" + sourceId);
 				changeSourceId(sourceId);
 			}
 			

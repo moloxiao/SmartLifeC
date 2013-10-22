@@ -16,4 +16,10 @@
     	android:layout_height="wrap_content"
     	android:text="IP更换"
     	android:onClick="btnChangeIp" />
+	
+	<Button 
+	    android:layout_width="120dp"
+    	android:layout_height="wrap_content"
+    	android:text="线路更换"
+    	android:onClick="btnChangeScreen" />
 </LinearLayout>

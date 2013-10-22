@@ -4,12 +4,12 @@
 
     <LinearLayout android:id="@+id/top_rect"
         android:layout_width="match_parent"
-    	android:layout_height="50dp"
+    	android:layout_height="80dp"
     	android:gravity="center"
     	android:orientation="horizontal" >
     	
         <Button 
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
     		android:layout_height="wrap_content"
     		android:text="开机"
     		android:onClick="btnPowerClick" />
@@ -17,20 +17,28 @@
             android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
     		android:orientation="vertical"
+    		android:gravity="center_horizontal"
     		android:layout_margin="5dp">
             <TextView android:id="@+id/control_device_name"
             	android:layout_width="wrap_content"
     			android:layout_height="wrap_content"
+    			android:gravity="center"
     			android:text="UNDEFINE" />
             <TextView android:id="@+id/control_source_id"
             	android:layout_width="wrap_content"
     			android:layout_height="wrap_content"
+    			android:gravity="center"
     			android:text="信号源丢失" />
+            <TextView android:id="@+id/control_screen_id"
+            	android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:gravity="center"
+    			android:text="线路丢失" />
             
         </LinearLayout>
         
         <Button 
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
     		android:layout_height="wrap_content"
     		android:text="静音"
     		android:onClick="btnMuteClick" />

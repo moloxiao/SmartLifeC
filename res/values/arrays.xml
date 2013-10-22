@@ -1,27 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="hm404_source">   
-        <item>屏幕1</item>   
-        <item>屏幕2</item>   
-        <item>屏幕3</item>   
-        <item>屏幕4</item>   
+        <item>节目源1</item>   
+        <item>节目源2</item>   
+        <item>节目源3</item>   
+        <item>节目源4</item>   
     </array>
     <array name="hm406_source">   
-        <item>屏幕1</item>   
-        <item>屏幕2</item>   
-        <item>屏幕3</item>
-        <item>屏幕4</item>  
-        <item>屏幕5</item>
-        <item>屏幕6</item> 
+        <item>节目源1</item>   
+        <item>节目源2</item>   
+        <item>节目源3</item>
+        <item>节目源4</item>  
     </array>
     <array name="hm808_source">   
-        <item>屏幕1</item>   
-        <item>屏幕2</item>   
-        <item>屏幕3</item>   
-        <item>屏幕4</item>  
-        <item>屏幕5</item>   
-        <item>屏幕6</item>   
-        <item>屏幕7</item>   
-        <item>屏幕8</item> 
+        <item>节目源1</item>   
+        <item>节目源2</item>   
+        <item>节目源3</item>   
+        <item>节目源4</item>  
+        <item>节目源5</item>   
+        <item>节目源6</item>   
+        <item>节目源7</item>   
+        <item>节目源8</item> 
+    </array>
+    
+    <array name="hm404_screen">   
+        <item>线路1</item>   
+        <item>线路2</item>   
+        <item>线路3</item>   
+        <item>线路4</item>   
+    </array>
+    <array name="hm406_screen">   
+        <item>线路1</item>   
+        <item>线路2</item>   
+        <item>线路3</item>
+        <item>线路4</item>  
+        <item>线路5</item>
+        <item>线路6</item> 
+    </array>
+    <array name="hm808_screen">   
+        <item>线路1</item>   
+        <item>线路2</item>   
+        <item>线路3</item>   
+        <item>线路4</item>  
+        <item>线路5</item>   
+        <item>线路6</item>   
+        <item>线路7</item>   
+        <item>线路8</item> 
     </array>
 </resources>
