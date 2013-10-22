@@ -6,8 +6,14 @@
     	android:gravity="center_horizontal" >
     
 	<Button 
-	    android:layout_width="wrap_content"
+	    android:layout_width="120dp"
     	android:layout_height="wrap_content"
     	android:text="设备选择"
     	android:onClick="btnChoiceDevice" />
+	
+	<Button 
+	    android:layout_width="120dp"
+    	android:layout_height="wrap_content"
+    	android:text="IP更换"
+    	android:onClick="btnChangeIp" />
 </LinearLayout>

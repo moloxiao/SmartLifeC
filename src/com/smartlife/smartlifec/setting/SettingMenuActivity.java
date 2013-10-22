@@ -18,4 +18,8 @@ public class SettingMenuActivity extends Activity {
 	public void btnChoiceDevice(View view) {
 		startActivity(new Intent(SettingMenuActivity.this, SettingDeviceTypeActivity.class));
 	}
+	
+	public void btnChangeIp(View view) {
+		startActivity(new Intent(SettingMenuActivity.this, SettingIpInfoActivity.class));
+	}
 }
