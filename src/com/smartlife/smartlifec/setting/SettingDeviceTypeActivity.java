@@ -23,7 +23,7 @@ public class SettingDeviceTypeActivity extends Activity {
 	private void initView() {
 		radioGroup = (RadioGroup) findViewById(R.id.radiogroup_id);
 		if(radioGroup != null) {
-			radioGroup.check(getCurrentStoreId(this));
+			radioGroup.check(getCurrentStoredDeviceId(this));
 		}
 	}
 	
@@ -47,7 +47,7 @@ public class SettingDeviceTypeActivity extends Activity {
 		return DeviceType.TYPE_UNDEFINE.getId();
 	}
 
-	public static int getCurrentStoreId(Context context) {
+	public static int getCurrentStoredDeviceId(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 	    int id = settings.getInt("type", DeviceType.TYPE_UNDEFINE.getId());
 		return id;

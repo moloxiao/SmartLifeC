@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="hm404_source">   
+        <item>屏幕1</item>   
+        <item>屏幕2</item>   
+        <item>屏幕3</item>   
+        <item>屏幕4</item>   
+    </array>
+    <array name="hm406_source">   
+        <item>屏幕1</item>   
+        <item>屏幕2</item>   
+        <item>屏幕3</item>
+        <item>屏幕4</item>  
+        <item>屏幕5</item>
+        <item>屏幕6</item> 
+    </array>
+    <array name="hm808_source">   
+        <item>屏幕1</item>   
+        <item>屏幕2</item>   
+        <item>屏幕3</item>   
+        <item>屏幕4</item>  
+        <item>屏幕5</item>   
+        <item>屏幕6</item>   
+        <item>屏幕7</item>   
+        <item>屏幕8</item> 
+    </array>
+</resources>

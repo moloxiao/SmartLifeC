@@ -25,7 +25,7 @@ public class SplashActivity extends Activity {
 		@Override
 		public void run() {
 			if(DeviceType.TYPE_UNDEFINE.getId() == 
-					SettingDeviceTypeActivity.getCurrentStoreId(SplashActivity.this)) {
+					SettingDeviceTypeActivity.getCurrentStoredDeviceId(SplashActivity.this)) {
 				startActivity(new Intent(SplashActivity.this, SettingDeviceTypeActivity.class));
 			}else {
 				startActivity(new Intent(SplashActivity.this, PoolControlImplActivity.class));

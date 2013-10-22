@@ -1,14 +1,15 @@
 package com.smartlife.smartlifec;
 
+import com.smartlife.smartlifec.domain.DeviceType;
+import com.smartlife.smartlifec.setting.SettingDeviceTypeActivity;
 import com.smartlife.smartlifec.setting.SettingMenuActivity;
 
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-public class BaseControlViewActivity extends BaseControlActivity {
+public abstract class BaseControlViewActivity extends BaseControlActivity {
 	
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -20,8 +21,7 @@ public class BaseControlViewActivity extends BaseControlActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
     		switch(item.getItemId()) {
     		case R.id.action_choice_source:
-    			// TODO : 添加源切换处理
-    			Toast.makeText(this, "源切换", Toast.LENGTH_LONG).show();
+    			showChoiceSourceDialog();
     			return true;
     		case R.id.action_settings:
     			startActivity(new Intent(BaseControlViewActivity.this, SettingMenuActivity.class));
@@ -97,5 +97,7 @@ public class BaseControlViewActivity extends BaseControlActivity {
     public void btn0Click(View view ) {
 		// TODO : 处理点击事件
     }
+    
+    protected abstract void showChoiceSourceDialog();
     
 }
