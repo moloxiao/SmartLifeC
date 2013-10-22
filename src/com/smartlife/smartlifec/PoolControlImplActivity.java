@@ -5,12 +5,12 @@ import com.smartlife.smartlifec.setting.SettingDeviceTypeActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 public class PoolControlImplActivity extends BaseControlViewActivity {
 
 	private TextView deviceName;
+	private TextView sourceName;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,16 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 
 	private void initView() {
 		deviceName = (TextView)findViewById(R.id.control_device_name);
+		sourceName = (TextView)findViewById(R.id.control_source_id);
 	}
 	
 	@Override
 	protected void onResume() {
 		super.onResume();
-		deviceName.setText( DeviceType.getDesc(
-				SettingDeviceTypeActivity.getCurrentStoredDeviceId(this)) );
+		int deviceId = SettingDeviceTypeActivity.getCurrentStoredDeviceId(this);
+		deviceName.setText( DeviceType.getDesc(deviceId));
+		int sourceId = BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId) + 1;
+		sourceName.setText("屏幕:" + sourceId);
 	}
 
 	@Override
@@ -36,7 +39,6 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 		builder.setTitle("数据源选择"); 
 		builder.setPositiveButton("确定", null);  
 		final int deviceId = SettingDeviceTypeActivity.getCurrentStoredDeviceId(this);
-		Log.i("MOLO_DEBUG", "deviceId=" + deviceId);
 		builder.setSingleChoiceItems(
 				DeviceType.getSourceListsId(deviceId), 
 				BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId), 
@@ -44,8 +46,9 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Log.i("MOLO_DEBUG", "which=" + which);
 				BaseControlActivity.storeCurrentSourceId(PoolControlImplActivity.this, which, deviceId);
+				int sourceId = BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId) + 1;
+				sourceName.setText("屏幕:" + sourceId);
 			}
 			
 		});

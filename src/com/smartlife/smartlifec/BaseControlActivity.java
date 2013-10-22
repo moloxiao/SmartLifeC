@@ -5,7 +5,6 @@ import com.smartlife.smartlifec.domain.IControl;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 public abstract class BaseControlActivity extends Activity 
 		implements IControl{
@@ -16,7 +15,6 @@ public abstract class BaseControlActivity extends Activity
 		int max = DeviceType.getMaxSourceSize(deviceId);
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 	    int id = settings.getInt("sourceId", 0);
-	    Log.i("MOLO_DEBUG", "native source id =" + id);
 	    if(id >= max) {
 			id = 0;
 		}
