@@ -44,12 +44,12 @@ public class SettingDeviceTypeActivity extends Activity {
 		case R.id.radiogroup_hm808:
 			return DeviceType.TYPE_HM808.getId();
 		}
-		return 0;
+		return DeviceType.TYPE_UNDEFINE.getId();
 	}
 
 	public static int getCurrentStoreId(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-	    int id = settings.getInt("type", 0);
+	    int id = settings.getInt("type", DeviceType.TYPE_UNDEFINE.getId());
 		return id;
 	}
 	

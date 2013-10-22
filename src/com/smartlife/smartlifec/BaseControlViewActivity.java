@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Toast;
 
 public class BaseControlViewActivity extends BaseControlActivity {
-
 	
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {

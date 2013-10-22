@@ -2,25 +2,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <RelativeLayout android:id="@+id/top_rect"
+    <LinearLayout android:id="@+id/top_rect"
         android:layout_width="match_parent"
-    	android:layout_height="50dp" >
+    	android:layout_height="50dp"
+    	android:gravity="center"
+    	android:orientation="horizontal" >
     	
         <Button 
             android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:layout_marginLeft="20dp"
     		android:text="开机"
     		android:onClick="btnPowerClick" />
-        
+        <TextView android:id="@+id/control_device_name"
+            android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="UNDEFINE"
+    		android:layout_margin="5dp"/>
         <Button 
             android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:layout_alignParentRight="true"
-    		android:layout_marginRight="20dp"
     		android:text="静音"
     		android:onClick="btnMuteClick" />
-    </RelativeLayout>
+    </LinearLayout>
     
     <LinearLayout android:id="@+id/second_rect"
         android:layout_width="match_parent"

@@ -2,9 +2,10 @@ package com.smartlife.smartlifec.domain;
 
 public enum DeviceType {
 
-	TYPE_HM404(0, "HM404"),
-    TYPE_HM406(1, "HM406"),
-    TYPE_HM808(2, "HM808");
+	TYPE_UNDEFINE(0, "UNDEFINE"),
+	TYPE_HM404(1, "HM404"),
+    TYPE_HM406(2, "HM406"),
+    TYPE_HM808(3, "HM808");
 
     private int id;
     private String desc;
@@ -23,8 +24,8 @@ public enum DeviceType {
     }
 
     
-    public static String getDesc(int state) {
-    		switch(state) {
+    public static String getDesc(int id) {
+    		switch(id) {
     		case 1:
     			return TYPE_HM404.getDesc();
     		case 2:
@@ -32,7 +33,7 @@ public enum DeviceType {
     		case 3:
     			return TYPE_HM808.getDesc();
     		default:
-    			return "UNSUPPORT";
+    			return TYPE_UNDEFINE.getDesc();
     		}
     }
 
