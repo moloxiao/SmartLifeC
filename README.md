@@ -1,7 +1,7 @@
 Smart Life Control
 ================================
 
-SLC is a simple control client on Android
+SLC is a simple control client on Android, which can be used to control vedio matrix, STB and TVs.
 
 TODO
 --------------------------------
