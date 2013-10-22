@@ -7,4 +7,10 @@ package com.smartlife.smartlifec.domain;
  */
 public interface IControl {
 
+	void send(byte[] datas);
+	void sendAndWait(byte[] datas, RecvDataCallBack callback);
+	
+	public interface RecvDataCallBack {
+		void onRecv(byte[] data);
+	}
 }

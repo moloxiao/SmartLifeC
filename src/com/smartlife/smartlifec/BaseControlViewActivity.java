@@ -1,9 +1,6 @@
 package com.smartlife.smartlifec;
 
-import com.smartlife.smartlifec.domain.DeviceType;
-import com.smartlife.smartlifec.setting.SettingDeviceTypeActivity;
 import com.smartlife.smartlifec.setting.SettingMenuActivity;
-
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;

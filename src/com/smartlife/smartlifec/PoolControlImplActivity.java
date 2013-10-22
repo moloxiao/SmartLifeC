@@ -1,10 +1,15 @@
 package com.smartlife.smartlifec;
 
+import java.util.Arrays;
+
+import com.smartlife.smartlifec.connect.ControlManager;
+import com.smartlife.smartlifec.connect.ControlOrderType;
 import com.smartlife.smartlifec.domain.DeviceType;
 import com.smartlife.smartlifec.setting.SettingDeviceTypeActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class PoolControlImplActivity extends BaseControlViewActivity {
@@ -31,6 +36,19 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 		deviceName.setText( DeviceType.getDesc(deviceId));
 		int sourceId = BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId) + 1;
 		sourceName.setText("屏幕:" + sourceId);
+		changeSourceId(sourceId);
+	}
+	
+	private void  changeSourceId(int sourceId) {
+		byte[] setSourceOrderData = ControlManager.getControlOrder(
+				ControlOrderType.getType(sourceId), 
+				ControlManager.getSourceId(sourceId));
+		if(setSourceOrderData != null) {
+			Log.i("MOLO_DEBUG", "setSourceOrderData=[" + Arrays.toString(setSourceOrderData) + "]");
+			send(setSourceOrderData);
+		}else {
+			Log.e("MOLO_DEBUG", "error send setSourceOrderData");
+		}
 	}
 
 	@Override
@@ -49,6 +67,7 @@ public class PoolControlImplActivity extends BaseControlViewActivity {
 				BaseControlActivity.storeCurrentSourceId(PoolControlImplActivity.this, which, deviceId);
 				int sourceId = BaseControlActivity.getCurrentStoredSourceId(PoolControlImplActivity.this, deviceId) + 1;
 				sourceName.setText("屏幕:" + sourceId);
+				changeSourceId(sourceId);
 			}
 			
 		});
