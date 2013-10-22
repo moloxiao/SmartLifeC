@@ -5,10 +5,7 @@ SLC is a simple control client on Android, which can be used to control vedio ma
 
 TODO
 --------------------------------
-添加设置界面
-添加源切换界面
-添加首次进入的设备选择界面
-添加主控制界面按键与事件监听
+接入协议
 
 
 关于UI的问题
