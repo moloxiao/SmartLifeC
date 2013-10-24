@@ -37,6 +37,9 @@
         <activity
             android:name="com.smartlife.smartlifec.setting.SettingIpInfoActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.smartlife.smartlifec.setting.SettingInitActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

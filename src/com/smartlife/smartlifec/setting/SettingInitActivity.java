@@ -1,37 +1,56 @@
 package com.smartlife.smartlifec.setting;
 
+import com.smartlife.smartlifec.PoolControlImplActivity;
 import com.smartlife.smartlifec.R;
 import com.smartlife.smartlifec.domain.DeviceType;
+
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 
-public class SettingDeviceTypeActivity extends Activity {
+public class SettingInitActivity extends Activity {
 
-	private static final String PREFS_NAME = "DeviceType";
 	private RadioGroup radioGroup;
+	private EditText ip;
+	private EditText port;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_setting_device_type);
+		setContentView(R.layout.activity_setting_init);
 		initView();
 	}
-
+	
 	private void initView() {
 		radioGroup = (RadioGroup) findViewById(R.id.radiogroup_id);
 		if(radioGroup != null) {
 			radioGroup.check(SettingDeviceTypeActivity.getCurrentStoredDeviceId(this));
 		}
+		
+		ip = (EditText)findViewById(R.id.edit_ip);
+		port = (EditText)findViewById(R.id.edit_port);
+		ip.setText(SettingIpInfoActivity.getIp(this));
+		port.setText(""+SettingIpInfoActivity.getPort(this));
 	}
 	
-	@Override
-	protected void onStop() {
-		super.onStop();
+	private void storeInfo() {
+		saveDeviceInfo();
+		saveIpAndPortInfo();
+	}
+	
+	private void saveDeviceInfo() {
 		int id = getCurrentChoicedId();
 		SettingDeviceTypeActivity.storeCurrentId(this, id);
+	}
+	
+	private void saveIpAndPortInfo() {
+		SettingIpInfoActivity.saveIpAndPort(this, 
+				ip.getText().toString(), 
+				Integer.parseInt(port.getText().toString()) );
+		
 	}
 
 	private int getCurrentChoicedId() {
@@ -46,18 +65,12 @@ public class SettingDeviceTypeActivity extends Activity {
 		}
 		return DeviceType.TYPE_UNDEFINE.getId();
 	}
-
-	public static int getCurrentStoredDeviceId(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-	    int id = settings.getInt("type", DeviceType.TYPE_UNDEFINE.getId());
-		return id;
-	}
 	
-	public static void storeCurrentId(Context context, int id) {
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-		SharedPreferences.Editor editor = settings.edit();
-	    editor.putInt("type", id);
-
-	    editor.commit();
+	public void btnConture(View view) {
+		// TODO : 还需要检查数据有效性
+		view.setEnabled(false);
+		storeInfo();
+		startActivity(new Intent(SettingInitActivity.this, PoolControlImplActivity.class));
+		finish();
 	}
 }

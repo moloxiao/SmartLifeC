@@ -40,7 +40,7 @@ public class SettingIpInfoActivity extends Activity {
 	}
 
 	private void saveIpAndPortInfo() {
-		saveIpAndPort(this, 
+		SettingIpInfoActivity.saveIpAndPort(this, 
 				ip.getText().toString(), 
 				Integer.parseInt(port.getText().toString()) );
 		

@@ -5,6 +5,7 @@ import java.util.TimerTask;
 
 import com.smartlife.smartlifec.domain.DeviceType;
 import com.smartlife.smartlifec.setting.SettingDeviceTypeActivity;
+import com.smartlife.smartlifec.setting.SettingInitActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,7 +27,7 @@ public class SplashActivity extends Activity {
 		public void run() {
 			if(DeviceType.TYPE_UNDEFINE.getId() == 
 					SettingDeviceTypeActivity.getCurrentStoredDeviceId(SplashActivity.this)) {
-				startActivity(new Intent(SplashActivity.this, SettingDeviceTypeActivity.class));
+				startActivity(new Intent(SplashActivity.this, SettingInitActivity.class));
 			}else {
 				startActivity(new Intent(SplashActivity.this, PoolControlImplActivity.class));
 			}
